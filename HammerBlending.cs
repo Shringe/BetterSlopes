@@ -1,6 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.GameContent.Drawing;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -34,6 +35,20 @@ internal class SpecialTile
     _texture = texture;
     _lightingColor = lightingColor;
     _spriteBatch = spriteBatch;
+  }
+
+  public void DrawDebugOverlay()
+  {
+    // Draw a red filter over the tile to distinguish it
+    Texture2D pixel = TextureAssets.MagicPixel.Value;
+    Rectangle destination = new Rectangle(
+      (int)_position.X,
+      (int)_position.Y,
+      16,
+      16
+    );
+
+    _spriteBatch.Draw(pixel, destination, Color.DarkRed * 0.3f);
   }
 
   public void DrawHalfBlock()
@@ -88,5 +103,8 @@ internal class TileBlending : GlobalTile
         specialTile.DrawHalfBlock();
         break;
     }
+
+    if (config.EnableDebugOverlay)
+      specialTile.DrawDebugOverlay();
   }
 }

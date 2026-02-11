@@ -16,4 +16,7 @@ public class HammerBlendingConfig : ModConfig
   [DefaultValue(BlendVariant.Basic)]
   [Slider]
   public BlendVariant Variant;
+
+  [DefaultValue(false)]
+  public bool EnableDebugOverlay;
 }

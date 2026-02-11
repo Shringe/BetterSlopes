@@ -6,6 +6,11 @@ Configs: {
 			Label: Variant
 			Tooltip: ""
 		}
+
+		EnableDebugOverlay: {
+			Label: Enable Debug Overlay
+			Tooltip: ""
+		}
 	}
 
 	BlendVariant: {
