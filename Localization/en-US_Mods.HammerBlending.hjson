@@ -1,1 +1,24 @@
+Configs: {
+	HammerBlendingConfig: {
+		DisplayName: Hammer Blending Config
 
+		Variant: {
+			Label: Variant
+			Tooltip: ""
+		}
+	}
+
+	BlendVariant: {
+		Tooltip: ""
+
+		Basic: {
+			Label: Basic
+			Tooltip: ""
+		}
+
+		Invisible: {
+			Label: Invisible
+			Tooltip: ""
+		}
+	}
+}
