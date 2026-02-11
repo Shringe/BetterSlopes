@@ -25,5 +25,15 @@ Configs: {
 			Label: Invisible
 			Tooltip: ""
 		}
+
+		DrawJustSlope: {
+			Label: Draw Just Slope
+			Tooltip: ""
+		}
+
+		DrawJustHalfBlock: {
+			Label: Draw Just Half Block
+			Tooltip: ""
+		}
 	}
 }

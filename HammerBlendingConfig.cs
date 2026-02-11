@@ -6,7 +6,9 @@ namespace HammerBlending;
 public enum BlendVariant
 {
   Basic,
-  Invisible
+  Invisible,
+  DrawJustSlope,
+  DrawJustHalfBlock,
 }
 
 public class HammerBlendingConfig : ModConfig
@@ -14,7 +16,7 @@ public class HammerBlendingConfig : ModConfig
   public override ConfigScope Mode => ConfigScope.ClientSide;
 
   [DefaultValue(BlendVariant.Basic)]
-  [Slider]
+  // [Slider]
   public BlendVariant Variant;
 
   [DefaultValue(false)]
