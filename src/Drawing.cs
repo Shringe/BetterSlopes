@@ -45,7 +45,7 @@ internal class SpecialTile
     _spriteBatch.Draw(pixel, destination, Color.DarkRed * 0.3f);
   }
 
-  public void DrawHalfBlock()
+  public void DrawHalfBlock(int horizontalOffset = 0)
   {
     // Get the bottom half of the full block texture
     Rectangle halfBlockSource = new Rectangle(
@@ -57,13 +57,27 @@ internal class SpecialTile
 
     // Adjust destination to draw bottom half only
     Rectangle destination = new Rectangle(
-      (int)_position.X,
+      (int)_position.X + horizontalOffset,
       (int)_position.Y + 8,
       16,
       8
     );
 
     _spriteBatch.Draw(_texture, destination, halfBlockSource, _lightingColor);
+  }
+
+  // Offsets the drawn halfBlock directionally based on the slope of this tile
+  public void DrawOffsetHalfBlock(int offset = 8)
+  {
+    switch (_tile.Slope)
+    {
+      case SlopeType.SlopeDownLeft:
+        DrawHalfBlock(offset);
+        break;
+      case SlopeType.SlopeDownRight:
+        DrawHalfBlock(-offset);
+        break;
+    }
   }
 
   // WARNING: this is largely decompiled code from tModLoader, I don't fully understand what it does, but it works

@@ -1,44 +1,40 @@
 Configs: {
 	HammerBlendingConfig: {
-		DisplayName: Hammer Blending Config
-
-		Variant: {
-			Label: Variant
-			Tooltip: ""
-		}
-
 		EnableDebugOverlay: {
-			Label: Enable Debug Overlay
 			Tooltip: ""
+			Label: Enable Debug Overlay
 		}
 
 		EnableMod: {
 			Tooltip: ""
 			Label: Enable Mod
 		}
-	}
 
-	BlendVariant: {
-		Tooltip: ""
-
-		Basic: {
-			Label: Basic
-			Tooltip: ""
+		Headers: {
+			Debugging: Debugging
+			Style: Style
 		}
 
-		Invisible: {
-			Label: Invisible
+		BlendingHalfBlockOffset: {
 			Tooltip: ""
+			Label: Blending Half Block Offset
 		}
 
-		DrawJustSlope: {
-			Label: Draw Just Slope
+		DrawBlendingHalfBlock: {
 			Tooltip: ""
+			Label: Draw Blending Half Block
 		}
 
-		DrawJustHalfBlock: {
-			Label: Draw Just Half Block
+		DrawHalfBlock: {
 			Tooltip: ""
+			Label: Draw Half Block
 		}
+
+		DrawSlope: {
+			Tooltip: ""
+			Label: Draw Slope
+		}
+
+		DisplayName: Hammer Blending Config
 	}
 }

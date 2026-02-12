@@ -44,19 +44,14 @@ internal class TileBlending : GlobalTile
 
     SpecialTile specialTile = new(i, j, spriteBatch);
 
-    switch (config.Variant)
-    {
-      case BlendVariant.Basic:
-        specialTile.DrawSlope();
-        specialTile.DrawHalfBlock();
-        break;
-      case BlendVariant.DrawJustHalfBlock:
-        specialTile.DrawHalfBlock();
-        break;
-      case BlendVariant.DrawJustSlope:
-        specialTile.DrawSlope();
-        break;
-    }
+    if (config.DrawSlope)
+      specialTile.DrawSlope();
+
+    if (config.DrawHalfBlock)
+      specialTile.DrawHalfBlock();
+
+    if (config.DrawBlendingHalfBlock)
+      specialTile.DrawOffsetHalfBlock(config.BlendingHalfBlockOffset);
 
     if (config.EnableDebugOverlay)
       specialTile.DrawDebugOverlay();
