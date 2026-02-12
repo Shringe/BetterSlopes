@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace HammerBlending;
 
@@ -96,7 +97,8 @@ internal class SpecialTile
           stripXPosition = 16 - stripIndex * 2 - 2;
           break;
         default:
-          throw new UnreachableException();
+          ModContent.GetInstance<HammerBlending>().Logger.Error($"Failed to render slope of unknown type `{_tile.Slope}` at {_tile}");
+          return;
       }
 
       Rectangle sourceRect = new Rectangle(

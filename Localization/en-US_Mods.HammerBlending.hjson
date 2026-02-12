@@ -11,6 +11,11 @@ Configs: {
 			Label: Enable Debug Overlay
 			Tooltip: ""
 		}
+
+		EnableMod: {
+			Tooltip: ""
+			Label: Enable Mod
+		}
 	}
 
 	BlendVariant: {

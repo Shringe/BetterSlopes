@@ -8,21 +8,28 @@ namespace HammerBlending;
 
 internal class TileBlending : GlobalTile
 {
+  private bool IsHalfBlock(Tile tile)
+  {
+    return tile.IsHalfBlock;
+  }
+
   public override bool PreDraw(int i, int j, int type, SpriteBatch spriteBatch)
   {
     Tile tile = Main.tile[i, j];
 
     bool shouldRegister = tile.Slope switch
     {
-      SlopeType.SlopeDownLeft => Main.tile[i + 1, j].IsHalfBlock,
-      SlopeType.SlopeDownRight => Main.tile[i - 1, j].IsHalfBlock,
+      SlopeType.SlopeDownLeft => IsHalfBlock(Main.tile[i + 1, j]),
+      SlopeType.SlopeDownRight => IsHalfBlock(Main.tile[i - 1, j]),
       _ => false
     };
 
-    if (shouldRegister)
+    // If ModContent.GetInstance has no overhead, it should probably by checked first, but I am assuming it has some overhead here
+    bool shouldBlend = shouldRegister && ModContent.GetInstance<HammerBlendingConfig>().EnableMod;
+    if (shouldBlend)
       Main.instance.TilesRenderer.AddSpecialPoint(i, j, TileDrawing.TileCounterType.CustomSolid);
 
-    return !shouldRegister;
+    return !shouldBlend;
   }
 
   public override void SpecialDraw(int i, int j, int type, SpriteBatch spriteBatch)

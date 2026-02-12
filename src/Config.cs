@@ -15,6 +15,9 @@ public class HammerBlendingConfig : ModConfig
 {
   public override ConfigScope Mode => ConfigScope.ClientSide;
 
+  [DefaultValue(true)]
+  public bool EnableMod;
+
   [DefaultValue(BlendVariant.Basic)]
   // [Slider]
   public BlendVariant Variant;
