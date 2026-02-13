@@ -1,1 +1,3 @@
-This description will show up on the steam page, check out https://steamcommunity.com/comment/Guide/formattinghelp.
+[url=https://github.com/Shringe/BetterSlopes]Source[/url]
+This mod blends together slopes with adjacent halfBlocks, removing the weird gap between them.
+This is my first Terraria mod, so please report any bugs in the steam description or on my github page.

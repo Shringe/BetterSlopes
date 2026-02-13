@@ -1,3 +1,3 @@
-displayName = Hammer Blending
+displayName = Blended Slopes
 author = Shringe_
-version = 0.3
+version = 0.4
