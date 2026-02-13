@@ -1,3 +1,4 @@
 displayName = Blended Slopes
 author = Shringe_
 version = 0.4
+homepage = https://github.com/Shringe/BetterSlopes
