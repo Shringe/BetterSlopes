@@ -18,6 +18,8 @@ public class HammerBlendingConfig : ModConfig
   [Slider]
   [Range(1, 15)]
   public int BlendingHalfBlockOffset;
+  [DefaultValue(false)]
+  public bool DrawBlendingHalfBlockLineFix;
 
   [Header("Debugging")]
   [DefaultValue(true)]

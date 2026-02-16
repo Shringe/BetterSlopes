@@ -53,6 +53,9 @@ internal class TileBlending : GlobalTile
     if (config.DrawBlendingHalfBlock)
       specialTile.DrawOffsetHalfBlock(config.BlendingHalfBlockOffset);
 
+    if (config.DrawBlendingHalfBlockLineFix)
+      specialTile.DrawOffsetHalfBlockLineFix(config.BlendingHalfBlockOffset);
+
     if (config.EnableDebugOverlay)
       specialTile.DrawDebugOverlay();
   }

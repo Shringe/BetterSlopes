@@ -36,5 +36,10 @@ Configs: {
 		}
 
 		DisplayName: Hammer Blending Config
+
+		DrawBlendingHalfBlockLineFix: {
+			Tooltip: ""
+			Label: Draw Blending Half Block Line Fix
+		}
 	}
 }

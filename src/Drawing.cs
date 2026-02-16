@@ -80,6 +80,40 @@ internal class SpecialTile
     }
   }
 
+
+  public void DrawHalfBlockLineFix(int horizontalOffset = 0)
+  {
+    Rectangle halfBlockSource = new Rectangle(
+      _tile.TileFrameX + 6,
+      _tile.TileFrameY + 8,
+      4,
+      8
+    );
+
+    Rectangle destination = new Rectangle(
+      (int)_position.X + horizontalOffset,
+      (int)_position.Y + 8,
+      4,
+      8
+    );
+
+    _spriteBatch.Draw(_texture, destination, halfBlockSource, _lightingColor);
+  }
+
+  // Offsets the drawn halfBlockLineFix directionally based on the slope of this tile
+  public void DrawOffsetHalfBlockLineFix(int offset = 8)
+  {
+    switch (_tile.Slope)
+    {
+      case SlopeType.SlopeDownLeft:
+        DrawHalfBlockLineFix(offset + 14);
+        break;
+      case SlopeType.SlopeDownRight:
+        DrawHalfBlockLineFix(-offset - 2);
+        break;
+    }
+  }
+
   // WARNING: this is largely decompiled code from tModLoader, I don't fully understand what it does, but it works
   public void DrawSlope()
   {
