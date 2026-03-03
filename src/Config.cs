@@ -12,6 +12,8 @@ public class HammerBlendingConfig : ModConfig
   public bool DrawSlope;
   [DefaultValue(true)]
   public bool DrawHalfBlock;
+  [DefaultValue(false)]
+  public bool UseUpperHalfOfTheHalfBlockTexture;
   [DefaultValue(true)]
   public bool DrawBlendingHalfBlock;
   [DefaultValue(6)]

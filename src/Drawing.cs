@@ -45,12 +45,12 @@ internal class SpecialTile
     _spriteBatch.Draw(pixel, destination, Color.DarkRed * 0.3f);
   }
 
-  public void DrawHalfBlock(int horizontalOffset = 0)
+  public void DrawHalfBlock(int horizontalOffset = 0, bool useUpperTexture = false)
   {
     // Get the bottom half of the full block texture
     Rectangle halfBlockSource = new Rectangle(
       _tile.TileFrameX,
-      _tile.TileFrameY + 8,
+      _tile.TileFrameY + (useUpperTexture ? 0 : 8),
       16,
       8
     );
@@ -67,15 +67,15 @@ internal class SpecialTile
   }
 
   // Offsets the drawn halfBlock directionally based on the slope of this tile
-  public void DrawOffsetHalfBlock(int offset = 8)
+  public void DrawOffsetHalfBlock(int offset, bool useUpperTexture)
   {
     switch (_tile.Slope)
     {
       case SlopeType.SlopeDownLeft:
-        DrawHalfBlock(offset);
+        DrawHalfBlock(offset, useUpperTexture);
         break;
       case SlopeType.SlopeDownRight:
-        DrawHalfBlock(-offset);
+        DrawHalfBlock(-offset, useUpperTexture);
         break;
     }
   }

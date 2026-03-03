@@ -41,5 +41,10 @@ Configs: {
 			Tooltip: ""
 			Label: Draw Blending Half Block Line Fix
 		}
+
+		UseUpperHalfOfTheHalfBlockTexture: {
+			Label: Use Upper Half Of The Half Block Texture
+			Tooltip: ""
+		}
 	}
 }

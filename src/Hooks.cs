@@ -48,10 +48,10 @@ internal class TileBlending : GlobalTile
       specialTile.DrawSlope();
 
     if (config.DrawHalfBlock)
-      specialTile.DrawHalfBlock();
+      specialTile.DrawHalfBlock(useUpperTexture: config.UseUpperHalfOfTheHalfBlockTexture);
 
     if (config.DrawBlendingHalfBlock)
-      specialTile.DrawOffsetHalfBlock(config.BlendingHalfBlockOffset);
+      specialTile.DrawOffsetHalfBlock(config.BlendingHalfBlockOffset, config.UseUpperHalfOfTheHalfBlockTexture);
 
     if (config.DrawBlendingHalfBlockLineFix)
       specialTile.DrawOffsetHalfBlockLineFix(config.BlendingHalfBlockOffset);
